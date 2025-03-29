@@ -13,7 +13,6 @@ function App() {
     <ClimaProvider>
       <MovieProvider>
         <NavBar></NavBar>
-        {/* <BuscadorPage></BuscadorPage> */}
         <Routes>
           <Route path="/" element={<BuscadorPage></BuscadorPage>}></Route>
           <Route path="/clima" element={<ClimaPage></ClimaPage>}></Route>
