@@ -114,15 +114,6 @@ export const BuscadorPage = () => {
         return "";
     }
   };
-  const titulo = (selector) => {
-    if (selector === "Clima") {
-      return "Clima";
-    } else if (selector === "Peliculas") {
-      return "Películas";
-    } else {
-      return "Buscador";
-    }
-  };
   const iconosInfoTema = () => {
     if (selector === "Clima" && iconoTema) {
       return (
