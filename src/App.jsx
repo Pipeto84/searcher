@@ -5,8 +5,6 @@ import { ClimaProvider } from "./context/ClimaProvider";
 import { MovieProvider } from "./context/MovieProvider";
 import { NavBar } from "./components/NavBar";
 import { Routes, Route } from "react-router-dom";
-import { Clima } from "./components/Clima";
-import { Peliculas } from "./components/Peliculas";
 
 function App() {
   return (

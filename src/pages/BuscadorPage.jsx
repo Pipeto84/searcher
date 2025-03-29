@@ -7,15 +7,13 @@ import iconMovieColor from "../assets/movieColor.svg";
 import iconCrispetas from "../assets/crispetas.svg";
 import iconTermometro from "../assets/termometro.svg";
 import iconWeatherColor from "../assets/weatherColor.svg";
+import { NavLink } from "react-router-dom";
 import "../styles/Buscador.css";
 
 export const BuscadorPage = () => {
   const [selector, setSelector] = useState("Buscador");
-  const [dataInput, setDataInput] = useState("");
   const [enviado, setEnviado] = useState("");
   const [iconoTema, setIconoTema] = useState(false);
-  const { fetchClima } = useContext(ClimaContext);
-  const { fetchMovie } = useContext(MovieContext);
   const inputRef = useRef();
 
   const clima = () => {
@@ -33,11 +31,11 @@ export const BuscadorPage = () => {
   const infoBuscar = (
     <h4 className="textoEnBuscador">
       Busca el{" "}
-      <a className="aClima" href="#" onClick={clima}>
+      <a className="aClima" href="/clima" onClick={clima}>
         Clima{" "}
       </a>
       actual de una ciudad o busca información de una
-      <a className="aPelicula" href="#" onClick={peliculas}>
+      <a className="aPelicula" href="/pelicula" onClick={peliculas}>
         {" "}
         Película.
       </a>
@@ -65,21 +63,6 @@ export const BuscadorPage = () => {
       );
     }
   };
-  const handleChanges = (e) => {
-    setDataInput(e.target.value);
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setEnviado(dataInput);
-    setIconoTema(false);
-    if (selector === "Clima") {
-      fetchClima(dataInput);
-      setDataInput("");
-    } else if (selector === "Peliculas") {
-      fetchMovie(dataInput);
-      setDataInput("");
-    }
-  };
   const seleccionada = () => {
     switch (selector) {
       case "Buscador":
@@ -100,54 +83,11 @@ export const BuscadorPage = () => {
         return;
     }
   };
-  const handlePlaceHolder = () => {
-    switch (selector) {
-      case "Buscador":
-        return "Selecciona un tema...";
-      case "Clima":
-        return "Ingresa una ciudad...";
-      case "Peliculas":
-        return "Ingresa nombre de película...";
-      default:
-        return "";
-    }
-  };
-  const iconosInfoTema = () => {
-    if (selector === "Clima" && iconoTema) {
-      return (
-        <>
-          <h4 className="textoTema">Busca el clima actual de una ciudad</h4>
-          <img
-            className="iconoClima1"
-            src={iconWeatherColor}
-            alt="icono clima"
-          />
-          <img className="iconoClima2" src={iconTermometro} alt="icono clima" />
-        </>
-      );
-    } else if (selector === "Peliculas" && iconoTema) {
-      return (
-        <>
-          <h4 className="textoTema">Busca información sobre una película</h4>
-          <img
-            className="iconoPelicula1"
-            src={iconMovieColor}
-            alt="icono pelicula"
-          />
-          <img
-            className="iconoPelicula2"
-            src={iconCrispetas}
-            alt="icono pelicula"
-          />
-        </>
-      );
-    }
-  };
   return (
     <div className="buscar">
       {seleccionada()}
       {iconosBuscar()}
-      {iconosInfoTema()}
+      {/* {iconosInfoTema()} */}
     </div>
   );
 };
