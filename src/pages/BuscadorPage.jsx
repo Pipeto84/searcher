@@ -145,48 +145,6 @@ export const BuscadorPage = () => {
   };
   return (
     <div className="buscar">
-      <form onSubmit={handleSubmit}>
-        <div className="input-group mb-3 buscador">
-          <button
-            type="submit"
-            className="btn btn-outline-dark ,"
-            disabled={dataInput < 1}
-          >
-            Buscar
-          </button>
-          <button
-            type="button"
-            className="btn btn-outline-dark dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          ></button>
-          <ul className="dropdown-menu listaTemas">
-            <li>
-              <a onClick={clima} className="dropdown-item">
-                Clima
-              </a>
-            </li>
-            <li>
-              <hr className="dropdown-divider" />
-            </li>
-            <li>
-              <a onClick={peliculas} className="dropdown-item">
-                Peliculas
-              </a>
-            </li>
-          </ul>
-          <input
-            type="text"
-            className="form-control , entrada"
-            value={dataInput}
-            onChange={handleChanges}
-            placeholder={handlePlaceHolder()}
-            id="inputBuscar"
-            autoComplete="off"
-            ref={inputRef}
-          />
-        </div>
-      </form>
       {seleccionada()}
       {iconosBuscar()}
       {iconosInfoTema()}
