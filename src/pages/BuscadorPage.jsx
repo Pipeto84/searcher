@@ -8,12 +8,22 @@ export const BuscadorPage = () => {
     <h4 className="textoEnBuscador">
       Busca el{" "}
       <NavLink className="aClima" to="/clima">
-        Clima{" "}
+        Clima
       </NavLink>
-      actual de una ciudad o busca información de una
+      <NavLink to="/clima">
+        <img className="iconoClima1" src={iconWeatherColor} alt="icono clima" />
+      </NavLink>
+      actual de una ciudad o <br/>busca información de una
       <NavLink className="aPelicula" to="/pelicula">
         {" "}
-        Película.
+        Película
+      </NavLink>
+      <NavLink to="/pelicula">
+        <img
+          className="iconoPelicula1"
+          src={iconMovieColor}
+          alt="icono pelicula"
+        />
       </NavLink>
     </h4>
   );
@@ -43,7 +53,7 @@ export const BuscadorPage = () => {
   return (
     <div className="buscar">
       {seleccionada()}
-      {iconosBuscar()}
+      {/* {iconosBuscar()} */}
     </div>
   );
 };
