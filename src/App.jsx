@@ -1,4 +1,6 @@
 import { BuscadorPage } from "./pages/BuscadorPage";
+import { ClimaPage } from "./pages/ClimaPage";
+import { PeliculasPage } from "./pages/PeliculaPage";
 import { ClimaProvider } from "./context/ClimaProvider";
 import { MovieProvider } from "./context/MovieProvider";
 import { NavBar } from "./components/NavBar";
@@ -11,10 +13,11 @@ function App() {
     <ClimaProvider>
       <MovieProvider>
         <NavBar></NavBar>
-        <BuscadorPage></BuscadorPage>
+        {/* <BuscadorPage></BuscadorPage> */}
         <Routes>
-          <Route path="/clima" element={<Clima></Clima>}></Route>
-          <Route path="/pelicula" element={<Peliculas></Peliculas>}></Route>
+          <Route path="/" element={<BuscadorPage></BuscadorPage>}></Route>
+          <Route path="/clima" element={<ClimaPage></ClimaPage>}></Route>
+          <Route path="/pelicula" element={<PeliculasPage></PeliculasPage>}></Route>
         </Routes>
       </MovieProvider>
     </ClimaProvider>
