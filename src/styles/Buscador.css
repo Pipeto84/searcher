@@ -5,11 +5,6 @@
   color: rgb(36, 36, 36);
   padding-top: 3rem;
 }
-.titulo {
-  padding: 2.5rem 1.25rem 1.25rem;
-  margin: 0;
-  color: rgb(20, 110, 20)
-}
 .buscador {
   max-width: 37.5rem;
   margin: 0 auto;
@@ -27,7 +22,7 @@
   margin: auto;
 }
 .aClima, .aPelicula {
-  color: rgb(202, 40, 40);
+  color: rgb(214, 119, 24);
 }
 .iconoClima1 {
   max-width: 5rem;
