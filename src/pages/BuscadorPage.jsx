@@ -3,8 +3,6 @@ import { Clima } from "../components/Clima";
 import { Peliculas } from "../components/Peliculas";
 import { ClimaContext } from "../context/ClimaContext";
 import { MovieContext } from "../context/MovieContext";
-import iconMovie from "../assets/movie.svg";
-import iconWeather from "../assets/weather.svg";
 import iconMovieColor from "../assets/movieColor.svg";
 import iconCrispetas from "../assets/crispetas.svg";
 import iconTermometro from "../assets/termometro.svg";
