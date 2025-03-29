@@ -1,11 +1,5 @@
-import { useState, useContext, useRef } from "react";
-import { Clima } from "../components/Clima";
-import { Peliculas } from "../components/Peliculas";
-import { ClimaContext } from "../context/ClimaContext";
-import { MovieContext } from "../context/MovieContext";
+import { useState, useRef } from "react";
 import iconMovieColor from "../assets/movieColor.svg";
-import iconCrispetas from "../assets/crispetas.svg";
-import iconTermometro from "../assets/termometro.svg";
 import iconWeatherColor from "../assets/weatherColor.svg";
 import { NavLink } from "react-router-dom";
 import "../styles/Buscador.css";
@@ -13,7 +7,7 @@ import "../styles/Buscador.css";
 export const BuscadorPage = () => {
   const [selector, setSelector] = useState("Buscador");
   const [enviado, setEnviado] = useState("");
-  const [iconoTema, setIconoTema] = useState(false);
+  const [iconoTema, setIconoTema] = useState(true);
   const inputRef = useRef();
 
   const clima = () => {
@@ -45,14 +39,14 @@ export const BuscadorPage = () => {
     if (selector === "Buscador") {
       return (
         <>
-          <a href="#" onClick={clima}>
+          <a href="/clima" onClick={clima}>
             <img
               className="iconoClima1"
               src={iconWeatherColor}
               alt="icono clima"
             />
           </a>
-          <a href="#" onClick={peliculas}>
+          <a href="/pelicula" onClick={peliculas}>
             <img
               className="iconoPelicula1"
               src={iconMovieColor}
@@ -64,30 +58,12 @@ export const BuscadorPage = () => {
     }
   };
   const seleccionada = () => {
-    switch (selector) {
-      case "Buscador":
-        return infoBuscar;
-      case "Clima":
-        if (enviado.length > 0) {
-          return <Clima></Clima>;
-        } else {
-          return;
-        }
-      case "Peliculas":
-        if (enviado.length > 0) {
-          return <Peliculas></Peliculas>;
-        } else {
-          return;
-        }
-      default:
-        return;
-    }
+    return infoBuscar;
   };
   return (
     <div className="buscar">
       {seleccionada()}
       {iconosBuscar()}
-      {/* {iconosInfoTema()} */}
     </div>
   );
 };
