@@ -6,33 +6,33 @@ import "../styles/Buscador.css";
 
 export const BuscadorPage = () => {
   const [selector, setSelector] = useState("Buscador");
-  const [enviado, setEnviado] = useState("");
-  const [iconoTema, setIconoTema] = useState(true);
+  // const [enviado, setEnviado] = useState("");
+  // const [iconoTema, setIconoTema] = useState(true);
   const inputRef = useRef();
 
   const clima = () => {
     setSelector("Clima");
-    setIconoTema(true);
-    setEnviado("");
+    // setIconoTema(true);
+    // setEnviado("");
     inputRef.current.focus();
   };
   const peliculas = () => {
     setSelector("Peliculas");
-    setIconoTema(true);
-    setEnviado("");
+    // setIconoTema(true);
+    // setEnviado("");
     inputRef.current.focus();
   };
   const infoBuscar = (
     <h4 className="textoEnBuscador">
       Busca el{" "}
-      <a className="aClima" href="/clima" onClick={clima}>
+      <NavLink className="aClima" to="/clima" >
         Clima{" "}
-      </a>
+      </NavLink>
       actual de una ciudad o busca información de una
-      <a className="aPelicula" href="/pelicula" onClick={peliculas}>
+      <NavLink className="aPelicula" to="/pelicula">
         {" "}
         Película.
-      </a>
+      </NavLink>
     </h4>
   );
   const iconosBuscar = () => {
